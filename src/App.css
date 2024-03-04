@@ -1,0 +1,73 @@
+body {
+  background-color: lightgray;
+}
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: white; */
+}
+
+.form-container {
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  /* box-sizing: border-box; */
+}
+
+.resume-preview {
+  width: 48%;
+  padding: 20px;
+  /* width: 100%; */
+  /* box-sizing: border-box; */
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.resume-preview-container {
+  /* margin-top: 20px; */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 100vh;
+  background-color: #fff;
+}
+.resume-content {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+}
+
+.resume-section {
+  margin-bottom: 20px;
+}
+
+.resume-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.resume-section p {
+  margin: 0;
+}
+
+.name {
+  background-color: #080b0d;
+  color: white;
+  padding: 36px 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+#resume-name {
+  text-align: center;
+}
+.resume-section p.info {
+  /* background-color: #000; */
+  color: #fff;
+  /* padding: 5px; */
+  font-size: 0.8em;
+  text-align: center;
+}
