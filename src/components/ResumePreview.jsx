@@ -18,8 +18,26 @@ export default function Resumepreview({
           <div className="name">
             <h2 id="resume-name">{name}</h2>
             <p className="info">
-              {email} {contact}
-              {city} {country}
+              {email && (
+                <>
+                  <i className="fas fa-envelope"></i>&nbsp; {email} &nbsp;
+                </>
+              )}
+              {contact && (
+                <>
+                  <i className="fas fa-phone"></i>&nbsp; {contact} &nbsp;
+                </>
+              )}
+              {city && country && (
+                <>
+                  <i className="fas fa-map-marker-alt"></i>&nbsp; {city},{" "}
+                  {country}
+                </>
+                //need to fix the city and country issue
+                // {/* <i class="fa-solid fa-envelope"></i> */}
+                // {/* {email} &nbsp; {contact} &nbsp;
+                // {city} {country} */}
+              )}
             </p>
           </div>
           <p>Profession: {profession}</p>
