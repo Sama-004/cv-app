@@ -14,7 +14,8 @@ export default function PersonalDetails({
   setCity,
 }) {
   return (
-    <div className="input-cointainer">
+    <div className="input-container">
+      <h2>Personal Details</h2>
       <input
         type="text"
         placeholder="Enter your name"

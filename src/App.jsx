@@ -10,8 +10,8 @@ export default function App() {
   const [contact, setContact] = useState("");
   const [profession, setProfession] = useState("");
   const [city, setCity] = useState("");
-  const [work, setWork] = useState("");
-  const [education, setEducation] = useState("");
+  const [work, setWork] = useState([""]);
+  const [education, setEducation] = useState([""]);
   return (
     <div className="app-container">
       <div className="form-container">

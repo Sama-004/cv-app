@@ -34,7 +34,7 @@ export default function Resumepreview({
               )}
             </p>
           </div>
-          <p>Profession: {profession}</p>
+          <p className="profession">{profession}</p>
         </div>
         <div className="resume-section">
           <h2>Work Experience</h2>
@@ -64,7 +64,8 @@ Resumepreview.propTypes = {
 
 make education and experience interactive 
 add buttons for education and experience
-style the input labels // add load example like the button given 
+style the input labels 
+// add load example like the button given 
 check for responsiveness in other projects if there then add else leave 
 
 */
