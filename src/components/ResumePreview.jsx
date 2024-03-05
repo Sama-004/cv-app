@@ -5,9 +5,8 @@ export default function Resumepreview({
   name,
   email,
   contact,
-  profession,
-  country,
   city,
+  profession,
   work,
   education,
 }) {
@@ -28,15 +27,10 @@ export default function Resumepreview({
                   <i className="fas fa-phone"></i>&nbsp; {contact} &nbsp;
                 </>
               )}
-              {city && country && (
+              {city && (
                 <>
-                  <i className="fas fa-map-marker-alt"></i>&nbsp; {city},{" "}
-                  {country}
+                  <i className="fas fa-map-marker-alt"></i>&nbsp; {city} &nbsp;
                 </>
-                //need to fix the city and country issue
-                // {/* <i class="fa-solid fa-envelope"></i> */}
-                // {/* {email} &nbsp; {contact} &nbsp;
-                // {city} {country} */}
               )}
             </p>
           </div>
@@ -65,3 +59,12 @@ Resumepreview.propTypes = {
   education: PropTypes.string.isRequired,
   work: PropTypes.string.isRequired,
 };
+
+/*
+
+make education and experience interactive 
+add buttons for education and experience
+style the input labels // add load example like the button given 
+check for responsiveness in other projects if there then add else leave 
+
+*/

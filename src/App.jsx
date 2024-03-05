@@ -9,7 +9,6 @@ export default function App() {
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
   const [profession, setProfession] = useState("");
-  const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [work, setWork] = useState("");
   const [education, setEducation] = useState("");
@@ -25,8 +24,6 @@ export default function App() {
           setContact={setContact}
           profession={profession}
           setProfession={setProfession}
-          country={country}
-          setCountry={setCountry}
           city={city}
           setCity={setCity}
         />
@@ -43,7 +40,6 @@ export default function App() {
           email={email}
           contact={contact}
           profession={profession}
-          country={country}
           city={city}
           work={work}
           education={education}

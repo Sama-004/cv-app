@@ -14,7 +14,6 @@ export default function WorkandEducation({
         value={work}
         onChange={(e) => setWork(e.target.value)}
       />
-      <br />
       <input
         type="text"
         placeholder="Education details"

@@ -10,8 +10,6 @@ export default function PersonalDetails({
   setContact,
   profession,
   setProfession,
-  country,
-  setCountry,
   city,
   setCity,
 }) {
@@ -40,25 +38,17 @@ export default function PersonalDetails({
       <br />
       <input
         type="text"
-        placeholder="Profession"
-        value={profession}
-        onChange={(e) => setProfession(e.target.value)}
-      />
-      <br />
-      <input
-        type="text"
-        placeholder="country"
-        value={country}
-        onChange={(e) => setCountry(e.target.value)}
-      />
-      <br />
-      <input
-        type="text"
-        placeholder="city"
+        placeholder="City, Country"
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
       <br />
+      <input
+        type="text"
+        placeholder="Profession"
+        value={profession}
+        onChange={(e) => setProfession(e.target.value)}
+      />
     </div>
   );
 }
@@ -72,8 +62,6 @@ PersonalDetails.propTypes = {
   setContact: PropTypes.func.isRequired,
   profession: PropTypes.string.isRequired,
   setProfession: PropTypes.func.isRequired,
-  country: PropTypes.string.isRequired,
-  setCountry: PropTypes.func.isRequired,
   city: PropTypes.string.isRequired,
   setCity: PropTypes.func.isRequired,
 };
