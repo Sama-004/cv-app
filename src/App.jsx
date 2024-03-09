@@ -8,10 +8,20 @@ export default function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
-  const [profession, setProfession] = useState("");
   const [city, setCity] = useState("");
-  const [work, setWork] = useState([""]);
-  const [education, setEducation] = useState([""]);
+  const [work, setWork] = useState([
+    {
+      company: "",
+      position: "",
+      startDate: "",
+      endDate: "",
+      location: "",
+      description: "",
+    },
+  ]);
+  const [education, setEducation] = useState([
+    { institution: "", degree: "", startDate: "", endDate: "", location: "" },
+  ]);
   return (
     <div className="app-container">
       <div className="form-container">
@@ -22,8 +32,6 @@ export default function App() {
           setEmail={setEmail}
           contact={contact}
           setContact={setContact}
-          profession={profession}
-          setProfession={setProfession}
           city={city}
           setCity={setCity}
         />
@@ -39,7 +47,6 @@ export default function App() {
           name={name}
           email={email}
           contact={contact}
-          profession={profession}
           city={city}
           work={work}
           education={education}

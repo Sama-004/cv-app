@@ -8,14 +8,15 @@ export default function PersonalDetails({
   setEmail,
   contact,
   setContact,
-  profession,
-  setProfession,
   city,
   setCity,
 }) {
   return (
     <div className="input-container">
-      <h2>Personal Details</h2>
+      <h2>
+        {" "}
+        <i className="fa-solid fa-person"></i> Personal Details
+      </h2>
       <input
         type="text"
         placeholder="Enter your name"
@@ -44,12 +45,6 @@ export default function PersonalDetails({
         onChange={(e) => setCity(e.target.value)}
       />
       <br />
-      <input
-        type="text"
-        placeholder="Profession"
-        value={profession}
-        onChange={(e) => setProfession(e.target.value)}
-      />
     </div>
   );
 }
@@ -61,8 +56,6 @@ PersonalDetails.propTypes = {
   setEmail: PropTypes.func.isRequired,
   contact: PropTypes.string.isRequired,
   setContact: PropTypes.func.isRequired,
-  profession: PropTypes.string.isRequired,
-  setProfession: PropTypes.func.isRequired,
   city: PropTypes.string.isRequired,
   setCity: PropTypes.func.isRequired,
 };

@@ -105,3 +105,13 @@ body {
   text-align: right;
   padding-right: 20px;
 }
+
+.edu-form,
+.exp-form {
+  text-align: center;
+}
+
+.exp-prev,
+.edu-prev {
+  text-align: center;
+}
