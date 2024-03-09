@@ -41,11 +41,10 @@ export default function Resumepreview({
               <p>
                 Company: {workEntry.company} <br />
                 Position: {workEntry.position} <br />
-                Start Date: {workEntry.startDate} <br />
-                End Date: {workEntry.endDate} <br />
+                <i className="date">
+                  {workEntry.startDate} - {workEntry.endDate} <br />
+                </i>
                 Location: {workEntry.location} <br />
-                {/* Company: {workEntry.company} <br />
-                Company: {workEntry.company} <br /> */}
               </p>
             </div>
           ))}
@@ -57,8 +56,9 @@ export default function Resumepreview({
               <p>
                 Instituition: {educationEntry.institution} <br />
                 Degree: {educationEntry.degree} <br />
-                Start Date: {educationEntry.startDate} <br />
-                End Date: {educationEntry.endDate} <br />
+                <i className="date">
+                  {educationEntry.startDate} - {educationEntry.endDate} <br />
+                </i>
                 Location: {educationEntry.location} <br />
               </p>
             </div>

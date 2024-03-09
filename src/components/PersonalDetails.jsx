@@ -19,21 +19,21 @@ export default function PersonalDetails({
       </h2>
       <input
         type="text"
-        placeholder="Enter your name"
+        placeholder="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <br />
       <input
         type="text"
-        placeholder="email"
+        placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
       <br />
       <input
         type="text"
-        placeholder="contact"
+        placeholder="Contact"
         value={contact}
         onChange={(e) => setContact(e.target.value)}
       />
