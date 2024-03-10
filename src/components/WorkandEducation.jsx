@@ -8,7 +8,8 @@ export default function WorkandEducation({
   education,
   setEducation,
 }) {
-  const [selectedExperience, setSelectedExperience] = useState(null);
+  const [selectedExperience, setSelectedExperience] = useState();
+  const [selectedEducation, setSelectedEducation] = useState();
 
   const handleAddWork = () => {
     setWork([
@@ -27,7 +28,14 @@ export default function WorkandEducation({
   const handleAddEducation = () => {
     setEducation([
       ...education,
-      { name: `Education ${education.length + 1}`, details: "" },
+      {
+        name: `Education ${education.length + 1}`,
+        institution: "",
+        degree: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+      },
     ]);
   };
 
@@ -43,6 +51,18 @@ export default function WorkandEducation({
     setEducation(updatedEducation);
   };
 
+  const handleDeleteEntry = (type, index) => {
+    if (type === "work") {
+      const updatedWork = [...work];
+      updatedWork.splice(index, 1);
+      setWork(updatedWork);
+    } else if (type === "education") {
+      const updatedEducation = [...education];
+      updatedEducation.splice(index, 1);
+      setEducation(updatedEducation);
+    }
+  };
+
   return (
     <div className="input-container">
       <div>
@@ -55,16 +75,21 @@ export default function WorkandEducation({
               <button onClick={() => setSelectedExperience(index)}>
                 {workEntry.name}
               </button>
+              &nbsp;&nbsp;&nbsp;
+              <button onClick={() => handleDeleteEntry("work", index)}>
+                Delete
+              </button>
             </div>
           ))}
         </div>
+        <br />
         <button onClick={handleAddWork}>Add Work Experience</button>
       </div>
       {selectedExperience !== null && work[selectedExperience] ? (
         <div>
           <h2>{work[selectedExperience].name}</h2>
           {work[selectedExperience] ? (
-            <div>
+            <div className="input-container">
               <input
                 type="text"
                 placeholder="Company Name"
@@ -135,31 +160,85 @@ export default function WorkandEducation({
       ) : null}
       <div>
         <h2 className="edu-form">
-          {" "}
           <i className="fa-solid fa-graduation-cap"></i> Education
         </h2>
         {education.map((educationEntry, index) => (
           <div key={index}>
-            <button onClick={() => setSelectedExperience(index)}>
+            <button onClick={() => setSelectedEducation(index)}>
               {educationEntry.name}
+            </button>
+            <button onClick={() => handleDeleteEntry("education", index)}>
+              Delete
             </button>
           </div>
         ))}
-        <button onClick={handleAddEducation}>Add Education</button>
       </div>
-      {selectedExperience !== null && education[selectedExperience] ? (
+      <button onClick={handleAddEducation}>Add Education</button>
+      {selectedEducation !== null && education[selectedEducation] ? (
         <div>
-          <h2>{education[selectedExperience].name}</h2>
-          {education[selectedExperience].details ? (
-            <div>
+          <h2>{education[selectedEducation].name}</h2>
+          {education[selectedEducation] ? (
+            <div className="input-container">
               <input
                 type="text"
-                placeholder="Details"
-                value={education[selectedExperience].details}
+                placeholder="institution"
+                value={education[selectedEducation].institution}
                 onChange={(e) =>
                   handleEducationDetailsChange(
-                    selectedExperience,
-                    "details",
+                    selectedEducation,
+                    "institution",
+                    e.target.value
+                  )
+                }
+              />
+              <br />
+              <input
+                type="text"
+                placeholder="degree"
+                value={education[selectedEducation].degree}
+                onChange={(e) =>
+                  handleEducationDetailsChange(
+                    selectedEducation,
+                    "degree",
+                    e.target.value
+                  )
+                }
+              />
+              <br />
+              <input
+                type="text"
+                placeholder="Start Date"
+                value={education[selectedEducation].startDate}
+                onChange={(e) =>
+                  handleEducationDetailsChange(
+                    selectedEducation,
+                    "startDate",
+                    e.target.value
+                  )
+                }
+              />
+              <br />
+              <input
+                type="text"
+                placeholder="End Date"
+                value={education[selectedEducation].endDate}
+                onChange={(e) =>
+                  handleEducationDetailsChange(
+                    selectedEducation,
+                    "endDate",
+                    e.target.value
+                  )
+                }
+              />
+              <br />
+              <input
+                type="text"
+                placeholder="location"
+                value={education[selectedEducation].location}
+                onChange={(e) =>
+                  handleEducationDetailsChange(
+                    selectedEducation,
+                    "location",
                     e.target.value
                   )
                 }

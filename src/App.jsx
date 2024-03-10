@@ -20,7 +20,13 @@ export default function App() {
     },
   ]);
   const [education, setEducation] = useState([
-    { institution: "", degree: "", startDate: "", endDate: "", location: "" },
+    {
+      institution: "",
+      degree: "",
+      startDate: "",
+      endDate: "",
+      location: "",
+    },
   ]);
   return (
     <div className="app-container">

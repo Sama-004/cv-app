@@ -43,8 +43,8 @@ export default function Resumepreview({
                 Position: {workEntry.position} <br />
                 <i className="date">
                   {workEntry.startDate} - {workEntry.endDate} <br />
+                  {workEntry.location} <br />
                 </i>
-                Location: {workEntry.location} <br />
               </p>
             </div>
           ))}
@@ -58,8 +58,8 @@ export default function Resumepreview({
                 Degree: {educationEntry.degree} <br />
                 <i className="date">
                   {educationEntry.startDate} - {educationEntry.endDate} <br />
+                  {educationEntry.location} <br />
                 </i>
-                Location: {educationEntry.location} <br />
               </p>
             </div>
           ))}
@@ -80,11 +80,9 @@ Resumepreview.propTypes = {
 
 /*
 
-make education and experience interactive 
-add buttons for education and experience
-style the input labels 
-// add load example like the button given 
-// education before experience
 check for responsiveness in other projects if there then add else leave 
-
+education before experience
+Add work details
+add load example like the button given 
+Add delete buttons for education and experience 
 */
