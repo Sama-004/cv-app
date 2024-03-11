@@ -35,7 +35,24 @@ export default function Resumepreview({
           </div>
         </div>
         <div className="resume-section">
-          <h2 className="exp-prev">Work Experience</h2>
+          {/* <h2 className="edu-prev">Education</h2> */}
+          {education.length > 0 && <h2 className="edu-prev">Education </h2>}
+          {education.map((educationEntry, index) => (
+            <div key={index}>
+              <p>
+                Instituition: {educationEntry.institution} <br />
+                Degree: {educationEntry.degree} <br />
+                <i className="date">
+                  {educationEntry.startDate} - {educationEntry.endDate} <br />
+                  {educationEntry.location}
+                </i>
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="resume-section">
+          {/* <h2 className="exp-prev">Work Experience</h2> */}
+          {work.length > 0 && <h2 className="exp-prev">Work Experience</h2>}
           {work.map((workEntry, index) => (
             <div key={index}>
               <p>
@@ -45,21 +62,7 @@ export default function Resumepreview({
                   {workEntry.startDate} - {workEntry.endDate} <br />
                   {workEntry.location} <br />
                 </i>
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className="resume-section">
-          <h2 className="edu-prev">Education</h2>
-          {education.map((educationEntry, index) => (
-            <div key={index}>
-              <p>
-                Instituition: {educationEntry.institution} <br />
-                Degree: {educationEntry.degree} <br />
-                <i className="date">
-                  {educationEntry.startDate} - {educationEntry.endDate} <br />
-                  {educationEntry.location} <br />
-                </i>
+                Description: {workEntry.description}
               </p>
             </div>
           ))}
@@ -80,9 +83,7 @@ Resumepreview.propTypes = {
 
 /*
 
-check for responsiveness in other projects if there then add else leave 
-education before experience
-Add work details
-add load example like the button given 
-Add delete buttons for education and experience 
+Styles
+Clear Resume
+Load example
 */
