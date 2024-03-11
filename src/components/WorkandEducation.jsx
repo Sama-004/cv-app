@@ -66,7 +66,7 @@ export default function WorkandEducation({
   };
 
   return (
-    <div className="input-container">
+    <div className="input-container, work-edu-container">
       <div>
         <h2 className="edu-form">
           <i className="fa-solid fa-graduation-cap"></i> Education
@@ -78,9 +78,9 @@ export default function WorkandEducation({
                 ? educationEntry.name
                 : `Education ${index + 1}`}
             </button>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
             <button onClick={() => handleDeleteEntry("education", index)}>
-              Delete
+              <i className="fa-solid fa-trash-can"></i>
             </button>
           </div>
         ))}
@@ -170,9 +170,9 @@ export default function WorkandEducation({
               <button onClick={() => setSelectedExperience(index)}>
                 {workEntry.name ? workEntry.name : `Experience ${index + 1}`}
               </button>
-              &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
               <button onClick={() => handleDeleteEntry("work", index)}>
-                Delete
+                <i className="fa-solid fa-trash-can"></i>
               </button>
             </div>
           ))}
