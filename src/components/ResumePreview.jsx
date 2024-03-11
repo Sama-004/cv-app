@@ -56,13 +56,13 @@ export default function Resumepreview({
           {work.map((workEntry, index) => (
             <div key={index}>
               <p>
-                Company: {workEntry.company} <br />
-                Position: {workEntry.position} <br />
+                {workEntry.company} <br />
+                {workEntry.position} <br />
                 <i className="date">
                   {workEntry.startDate} - {workEntry.endDate} <br />
                   {workEntry.location} <br />
                 </i>
-                Description: {workEntry.description}
+                {workEntry.description}
               </p>
             </div>
           ))}
@@ -82,8 +82,5 @@ Resumepreview.propTypes = {
 };
 
 /*
-
 Styles
-Clear Resume
-Load example
 */

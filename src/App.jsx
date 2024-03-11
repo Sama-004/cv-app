@@ -42,8 +42,8 @@ export default function App() {
 
   const loadExample = () => {
     // Implement logic to load example data
-    setName("John Doe");
-    setEmail("john@example.com");
+    setName("Samanyu Roy");
+    setEmail("samanyu@example.com");
     setContact("123-456-7890");
     setCity("Example City, Example Country");
 
@@ -76,6 +76,7 @@ export default function App() {
   return (
     <div className="app-container">
       <div className="form-container">
+        <ResumeControls clearResume={clearResume} loadExample={loadExample} />
         <PersonalDetails
           name={name}
           setName={setName}
@@ -93,7 +94,6 @@ export default function App() {
           setEducation={setEducation}
         />
         <br />
-        <ResumeControls clearResume={clearResume} loadExample={loadExample} />
         <br />
       </div>
       <div className="resume-preview">

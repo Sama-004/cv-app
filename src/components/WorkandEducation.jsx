@@ -1,5 +1,8 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import EducationSection from "./sections/EducationSection";
+import ExperienceSection from "./sections/ExperienceSection";
+
 import "../App.css";
 
 export default function WorkandEducation({
@@ -66,203 +69,25 @@ export default function WorkandEducation({
   };
 
   return (
-    <div className="input-container, work-edu-container">
-      <div>
-        <h2 className="edu-form">
-          <i className="fa-solid fa-graduation-cap"></i> Education
-        </h2>
-        {education.map((educationEntry, index) => (
-          <div key={index}>
-            <button onClick={() => setSelectedEducation(index)}>
-              {educationEntry.name
-                ? educationEntry.name
-                : `Education ${index + 1}`}
-            </button>
-            &nbsp;&nbsp;&nbsp;
-            <button onClick={() => handleDeleteEntry("education", index)}>
-              <i className="fa-solid fa-trash-can"></i>
-            </button>
-          </div>
-        ))}
-      </div>
-      <br />
-      <button onClick={handleAddEducation}>Add Education</button>
-      {selectedEducation !== null && education[selectedEducation] ? (
-        <div>
-          <h2>{education[selectedEducation].name}</h2>
-          {education[selectedEducation] ? (
-            <div className="input-container">
-              <input
-                type="text"
-                placeholder="institution"
-                value={education[selectedEducation].institution}
-                onChange={(e) =>
-                  handleEducationDetailsChange(
-                    selectedEducation,
-                    "institution",
-                    e.target.value
-                  )
-                }
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="degree"
-                value={education[selectedEducation].degree}
-                onChange={(e) =>
-                  handleEducationDetailsChange(
-                    selectedEducation,
-                    "degree",
-                    e.target.value
-                  )
-                }
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Start Date"
-                value={education[selectedEducation].startDate}
-                onChange={(e) =>
-                  handleEducationDetailsChange(
-                    selectedEducation,
-                    "startDate",
-                    e.target.value
-                  )
-                }
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="End Date"
-                value={education[selectedEducation].endDate}
-                onChange={(e) =>
-                  handleEducationDetailsChange(
-                    selectedEducation,
-                    "endDate",
-                    e.target.value
-                  )
-                }
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="location"
-                value={education[selectedEducation].location}
-                onChange={(e) =>
-                  handleEducationDetailsChange(
-                    selectedEducation,
-                    "location",
-                    e.target.value
-                  )
-                }
-              />
-            </div>
-          ) : null}
-        </div>
-      ) : null}
-      <div>
-        <h2 className="exp-form">
-          <i className="fa-solid fa-suitcase"></i> Experience
-        </h2>
-        <div>
-          {work.map((workEntry, index) => (
-            <div key={index}>
-              <button onClick={() => setSelectedExperience(index)}>
-                {workEntry.name ? workEntry.name : `Experience ${index + 1}`}
-              </button>
-              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              <button onClick={() => handleDeleteEntry("work", index)}>
-                <i className="fa-solid fa-trash-can"></i>
-              </button>
-            </div>
-          ))}
-        </div>
-        <br />
-        <button onClick={handleAddWork}>Add Work Experience</button>
-      </div>
-      {selectedExperience !== null && work[selectedExperience] ? (
-        <div>
-          <h2>{work[selectedExperience].name}</h2>
-          {work[selectedExperience] ? (
-            <div className="input-container">
-              <input
-                type="text"
-                placeholder="Company Name"
-                value={work[selectedExperience].company}
-                onChange={(e) =>
-                  handleWorkChange(
-                    selectedExperience,
-                    "company",
-                    e.target.value
-                  )
-                }
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Position Title"
-                value={work[selectedExperience].position}
-                onChange={(e) =>
-                  handleWorkChange(
-                    selectedExperience,
-                    "position",
-                    e.target.value
-                  )
-                }
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Start Date"
-                value={work[selectedExperience].startDate}
-                onChange={(e) =>
-                  handleWorkChange(
-                    selectedExperience,
-                    "startDate",
-                    e.target.value
-                  )
-                }
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="End Date"
-                value={work[selectedExperience].endDate}
-                onChange={(e) =>
-                  handleWorkChange(
-                    selectedExperience,
-                    "endDate",
-                    e.target.value
-                  )
-                }
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Location"
-                value={work[selectedExperience].location}
-                onChange={(e) =>
-                  handleWorkChange(
-                    selectedExperience,
-                    "location",
-                    e.target.value
-                  )
-                }
-              />
-              <textarea
-                placeholder="Enter description here"
-                value={work[selectedExperience].description}
-                onChange={(e) =>
-                  handleWorkChange(
-                    selectedExperience,
-                    "description",
-                    e.target.value
-                  )
-                }></textarea>
-            </div>
-          ) : null}
-        </div>
-      ) : null}
+    <div className="input-container work-edu-container">
+      <EducationSection
+        education={education}
+        setEducation={setEducation}
+        selectedEducation={selectedEducation}
+        setSelectedEducation={setSelectedEducation}
+        handleDeleteEntry={handleDeleteEntry}
+        handleEducationDetailsChange={handleEducationDetailsChange}
+        handleAddEducation={handleAddEducation}
+      />
+      <ExperienceSection
+        work={work}
+        setWork={setWork}
+        selectedExperience={selectedExperience}
+        setSelectedExperience={setSelectedExperience}
+        handleDeleteEntry={handleDeleteEntry}
+        handleWorkChange={handleWorkChange}
+        handleAddWork={handleAddWork}
+      />
     </div>
   );
 }
