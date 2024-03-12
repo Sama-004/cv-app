@@ -41,13 +41,11 @@ export default function App() {
   };
 
   const loadExample = () => {
-    // Implement logic to load example data
     setName("Samanyu Roy");
     setEmail("samanyu@example.com");
     setContact("123-456-7890");
     setCity("Example City, Example Country");
 
-    // Load example data for WorkAndEducation component
     setWork([
       {
         name: "Experience 1",

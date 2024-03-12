@@ -1,0 +1,52 @@
+.resume-section {
+  margin-bottom: 20px;
+}
+
+.resume-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.resume-section p {
+  margin: 0;
+}
+
+.resume-section p.info {
+  font-size: 0.8em;
+  /* text-align: center; */
+}
+
+.edu-prev,
+.exp-prev {
+  /* text-align: center; */
+}
+
+.education-entry,
+.work-entry {
+  /* text-align: center; */
+}
+
+.institution,
+.company {
+  font-weight: bold;
+}
+
+.degree,
+.position {
+  font-size: 0.9em;
+  font-weight: normal;
+}
+
+.date {
+  font-size: 0.8em;
+  color: #555;
+}
+
+.location {
+  font-size: 0.9em;
+}
+
+.description {
+  font-size: 0.9em;
+  margin-top: 10px;
+}
