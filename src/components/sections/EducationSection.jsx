@@ -17,19 +17,28 @@ export default function EducationSection({
       </h2>
       {education.map((educationEntry, index) => (
         <div key={index}>
-          <button onClick={() => setSelectedEducation(index)}>
+          <button
+            className="num-button"
+            onClick={() => setSelectedEducation(index)}>
             {educationEntry.name
               ? educationEntry.name
               : `Education ${index + 1}`}
           </button>
           &nbsp;&nbsp;&nbsp;
-          <button onClick={() => handleDeleteEntry("education", index)}>
-            <i className="fa-solid fa-trash-can"></i>
+          <button
+            className="delete-button"
+            onClick={() => handleDeleteEntry("education", index)}>
+            <i className="fa-solid fa-trash"></i>
           </button>
         </div>
       ))}
       <br />
-      <button onClick={handleAddEducation}>Add Education</button>
+      <button onClick={handleAddEducation} className="create-form">
+        <h4>
+          <i className="fa-solid fa-plus"></i>
+          Education
+        </h4>
+      </button>
       {selectedEducation !== null && education[selectedEducation] ? (
         <div>
           <h2>{education[selectedEducation].name}</h2>

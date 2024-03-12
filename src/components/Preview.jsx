@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import "../App.css";
-import "../Preview.css";
 
 export default function Resumepreview({
   name,
@@ -38,29 +37,36 @@ export default function Resumepreview({
         <div className="resume-section">
           {education.length > 0 && <h2 className="edu-prev">Education </h2>}
           {education.map((educationEntry, index) => (
-            <div key={index} className="education-entry">
-              <p className="institution">{educationEntry.institution}</p>
-              <p className="degree">{educationEntry.degree}</p>
-              <p className="date">
-                {educationEntry.startDate}{" "}
-                {educationEntry.endDate && ` - ${educationEntry.endDate}`}
+            <div key={index}>
+              <p>
+                {educationEntry.institution} <br />
+                {educationEntry.degree}
+                <i className="date">
+                  {educationEntry.startDate}{" "}
+                  {educationEntry.endDate && ` - ${educationEntry.endDate}`}
+                  <br />
+                  {educationEntry.location}
+                </i>
               </p>
-              <p className="location">{educationEntry.location}</p>
+              <br />
             </div>
           ))}
         </div>
         <div className="resume-section">
           {work.length > 0 && <h2 className="exp-prev">Work Experience</h2>}
           {work.map((workEntry, index) => (
-            <div key={index} className="work-entry">
-              <p className="company">{workEntry.company}</p>
-              <p className="position">{workEntry.position}</p>
-              <p className="date">
-                {workEntry.startDate}{" "}
-                {workEntry.endDate && ` - ${workEntry.endDate}`}
+            <div key={index}>
+              <p>
+                {workEntry.company} <br />
+                {workEntry.position} <br />
+                <i className="date">
+                  {workEntry.startDate}{" "}
+                  {workEntry.endDate && ` - ${workEntry.endDate}`}
+                  <br />
+                  {workEntry.location} <br />
+                </i>
+                {workEntry.description}
               </p>
-              <p className="location">{workEntry.location}</p>
-              <p className="description">{workEntry.description}</p>
             </div>
           ))}
         </div>

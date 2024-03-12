@@ -12,11 +12,12 @@ export default function PersonalDetails({
   setCity,
 }) {
   return (
-    <div className="input-container">
+    <div className="input-container personal-details">
       <h2>
         {" "}
         <i className="fa-solid fa-person"></i> Personal Details
       </h2>
+      <label htmlFor="name">Full Name</label>
       <input
         type="text"
         placeholder="Name"
@@ -24,6 +25,7 @@ export default function PersonalDetails({
         onChange={(e) => setName(e.target.value)}
       />
       <br />
+      <label htmlFor="email">Email</label>
       <input
         type="text"
         placeholder="Email"
@@ -31,6 +33,7 @@ export default function PersonalDetails({
         onChange={(e) => setEmail(e.target.value)}
       />
       <br />
+      <label htmlFor="contact">Phone Number</label>
       <input
         type="text"
         placeholder="Contact"
@@ -38,6 +41,7 @@ export default function PersonalDetails({
         onChange={(e) => setContact(e.target.value)}
       />
       <br />
+      <label htmlFor="City,Country">Location</label>
       <input
         type="text"
         placeholder="City, Country"

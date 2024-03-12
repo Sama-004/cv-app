@@ -18,18 +18,27 @@ export default function ExperienceSection({
       <div>
         {work.map((workEntry, index) => (
           <div key={index}>
-            <button onClick={() => setSelectedExperience(index)}>
+            <button
+              className="num-button"
+              onClick={() => setSelectedExperience(index)}>
               {workEntry.name ? workEntry.name : `Experience ${index + 1}`}
             </button>
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <button onClick={() => handleDeleteEntry("work", index)}>
-              <i className="fa-solid fa-trash-can"></i>
+            <button
+              className="delete-button"
+              onClick={() => handleDeleteEntry("work", index)}>
+              <i className="fa-solid fa-trash"></i>
             </button>
           </div>
         ))}
       </div>
       <br />
-      <button onClick={handleAddWork}>Add Experience</button>
+      <button onClick={handleAddWork} className="create-form">
+        <h4>
+          <i className="fa-solid fa-plus"></i>
+          Experience
+        </h4>
+      </button>
       {selectedExperience !== null && work[selectedExperience] ? (
         <div>
           <h2>{work[selectedExperience].name}</h2>
