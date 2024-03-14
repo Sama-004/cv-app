@@ -1,6 +1,23 @@
 body {
   background-color: lightgray;
 }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 
 :root {
   font-size: 16px;
@@ -59,7 +76,7 @@ button {
     0 8px 16px -8px rgba(0, 0, 0, 0.25);
   height: 29.7cm;
   width: 21cm;
-  width: 100%;
+  /* width: 100%; */
   box-sizing: border-box;
   height: 100vh;
   background-color: #fff;
@@ -75,7 +92,9 @@ button {
 }
 
 .resume-section {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  margin-top: 40px;
+  padding: 0 56px;
 }
 
 .resume-section h2 {
@@ -88,15 +107,19 @@ button {
   margin: 0;
 }
 
-.name {
+.personal-info {
   background-color: #0e374e;
   color: white;
   padding: 24px;
   height: 100px;
   width: 100%;
   box-sizing: border-box;
+  text-align: center;
 }
 
+h1 {
+  margin-bottom: 14px;
+}
 #resume-name {
   text-align: center;
 }
@@ -112,21 +135,16 @@ button {
   text-align: center;
 }
 
-.exp-prev,
-.edu-prev {
-  text-align: center;
+.header-text {
   align-items: center;
   background-color: rgba(14, 55, 78, 0.07);
   border-radius: 2px;
   color: #0e374e;
-  border-radius: 2px;
   display: flex;
   justify-content: center;
+  margin-bottom: 13px;
   padding: 4px 0;
-}
-.date {
-  float: right;
-  padding-right: 20px;
+  text-align: center;
 }
 
 .resume-control {
@@ -153,6 +171,13 @@ button {
   justify-content: center;
 }
 
+.clear-resume:active {
+  transform: translateY(4px);
+}
+
+.load-example:active {
+  transform: translateY(4px);
+}
 .resume-control .load-example {
   padding: 6px;
 }
@@ -161,7 +186,7 @@ button {
   border: none;
   border-radius: 4px;
   flex-grow: 1;
-  font-family: NotoSans-bold;
+  font-family: NotoSans;
   font-size: 18px;
   transition: 0.1s;
   align-self: center;
@@ -205,5 +230,21 @@ button {
 }
 
 .personal-details {
-  align-self: center;
+  /* align-self: center; */
+  margin-top: 10px;
+}
+
+.resume.top {
+  grid-template-rows: auto 1fr;
+}
+
+.resume {
+  background-color: #fff;
+  display: grid;
+  font-family: NotoSans, sans-serif;
+  height: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }

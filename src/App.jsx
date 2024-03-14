@@ -52,9 +52,10 @@ export default function App() {
         company: "Example Company",
         position: "Example Position",
         startDate: "2010-01-01",
-        endDate: "2015-12-31",
+        endDate: "Present",
         location: "Example Location",
-        description: "Example Description",
+        description:
+          "Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.",
       },
     ]);
 
